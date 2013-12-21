@@ -4,6 +4,9 @@
 # Build files
 build
 
+# Xcode
+*.xcodeproj
+
 # Compiled Object files
 *.slo
 *.lo
@@ -17,3 +20,6 @@ build
 *.lai
 *.la
 *.a
+
+# Textmate
+.*.TM_*
