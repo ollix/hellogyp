@@ -1,6 +1,6 @@
 {
   'includes': [
-    '../../../common.gypi'
+    '../common.gypi'
   ],
   'targets': [
     {
@@ -15,7 +15,7 @@
         'main.mm',
       ],
       'include_dirs': [
-        '../../',
+        '..',
       ],
       'mac_bundle_resouces': [
         'English.lproj/InfoPlist.strings',
@@ -34,7 +34,7 @@
         'CLANG_ENABLE_OBJC_ARC': 'YES',
       },
       'dependencies': [
-        '../hellogyp.gyp:hellogyp'
+        '../hellogyp/hellogyp.gyp:hellogyp'
       ],
     }
   ]

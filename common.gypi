@@ -37,8 +37,5 @@
         },
       }],  # OS=="ios"
     ],  # conditions
-    'include_dirs': [
-      'src',
-    ],
   },
 }

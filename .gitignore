@@ -1,8 +1,9 @@
 # Mac
 .DS_Store
 
-# Build files
-build
+# Build directory
+build/
+out/
 
 # Xcode
 *.xcodeproj
