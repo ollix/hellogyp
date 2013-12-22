@@ -7,6 +7,11 @@ build
 # Xcode
 *.xcodeproj
 
+# Android
+bin/
+gen/
+local.properties
+
 # Compiled Object files
 *.slo
 *.lo
