@@ -2,6 +2,7 @@ package com.example.hellogyp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends Activity
 {
@@ -11,5 +12,14 @@ public class MainActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        TextView greeting = (TextView)findViewById(R.id.greeting);
+        greeting.setText(stringFromJNI());
+    }
+
+    public native String stringFromJNI();
+
+    static {
+        System.loadLibrary("hello-jni");
     }
 }

@@ -10,6 +10,9 @@ build
 # Android
 bin/
 gen/
+objs/
+*.mk
+!Android.mk
 local.properties
 
 # Compiled Object files

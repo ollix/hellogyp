@@ -1,6 +1,6 @@
 {
   'includes': [
-    '../../common.gypi'
+    '../common.gypi'
   ],
   'targets': [
     {
@@ -8,6 +8,9 @@
       'type': 'static_library',
       'sources': [
         'hello.cc',
+      ],
+      'include_dirs': [
+        '..',
       ],
     },
   ]
