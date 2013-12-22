@@ -1,5 +1,8 @@
 LOCAL_PATH := $(call my-dir)
 
+NDK_TOOLCHAIN_VERSION := clang
+APP_CPPFLAGS += -std=c++11
+
 # Includes dependent makefiles.
 include $(LOCAL_PATH)/../../GypAndroid.mk
 

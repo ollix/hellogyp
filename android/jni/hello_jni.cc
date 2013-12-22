@@ -15,7 +15,7 @@ extern "C" {
 
 jstring Java_com_example_hellogyp_MainActivity_stringFromJNI(JNIEnv* env,
                                                              jobject obj) {
-  hellogyp::Hello hello = hellogyp::Hello();
+  auto hello = hellogyp::Hello();
   return env->NewStringUTF(hello.GetGreetingMessage().c_str());
 }
 

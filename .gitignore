@@ -12,9 +12,13 @@ out/
 bin/
 gen/
 objs/
-*.mk
-!Android.mk
 local.properties
+
+# Gyp-generated files or directories
+*.target.mk
+GypAndroid.mk
+build/
+out/
 
 # Compiled Object files
 *.slo

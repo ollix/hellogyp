@@ -24,7 +24,7 @@ At this point, we can change to the root directory of our Android example.
 Before actually build the app. We need to build native code firstly by NDK.
 Note that "`APP_STL=stlport_static`" is required for including the `<string>` header file in `jni/hello_jni.cc`.
 
-    ndk-build V=1 APP_STL=stlport_static
+    ndk-build
 
 At this point, we can build the actual app.
 
