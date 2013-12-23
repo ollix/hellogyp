@@ -17,7 +17,7 @@
       'include_dirs': [
         '..',
       ],
-      'mac_bundle_resouces': [
+      'mac_bundle_resources': [
         'English.lproj/InfoPlist.strings',
       ],
       'link_settings': {
