@@ -5,6 +5,12 @@
         'SDKROOT': 'iphoneos',
       },  # xcode_settings
     }],  # OS=="ios"
+    ['OS=="mac" and "<(GENERATOR)"=="ninja"', {
+      'make_global_settings': [
+        ['CC', '/usr/bin/clang'],
+        ['CXX', '/usr/bin/clang++'],
+      ],
+    }],  # OS=="mac" and "<(GENERATOR)"=="win"
   ],  # conditions
   'target_defaults': {
     'default_configuration': 'Debug',

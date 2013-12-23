@@ -9,6 +9,7 @@
       'type': 'executable',
       'production_extension': 'bundle',
       'mac_bundle': 1,
+      'dependencies': [ '../hellogyp/hellogyp.gyp:hellogyp' ],
       'sources': [
         'HGAppDelegate.mm',
         'HGRootViewController.mm',
@@ -33,9 +34,6 @@
         'CONFIGURATION_BUILD_DIR': 'build/Default',
         'CLANG_ENABLE_OBJC_ARC': 'YES',
       },
-      'dependencies': [
-        '../hellogyp/hellogyp.gyp:hellogyp'
-      ],
     }
   ]
 }
