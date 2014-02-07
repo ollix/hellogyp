@@ -12,7 +12,10 @@ out/
 bin/
 gen/
 objs/
+build.xml
 local.properties
+project.properties
+proguard-project.txt
 
 # Gyp-generated files or directories
 *.target.mk

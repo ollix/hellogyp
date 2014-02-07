@@ -22,6 +22,10 @@ At this point, we can change to the root directory of our Android example.
 
     cd <hellogyp_root>/android/
 
+Then we need to generate the `build.xml` file by
+
+    android update project -p .
+
 Before actually build the app. We need to build native code firstly by NDK.
 
     ndk-build
