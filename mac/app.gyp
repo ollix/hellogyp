@@ -13,9 +13,6 @@
 				'HGAppDelegate.mm',
 				'main.mm',
 			],
-			'include_dirs': [
-				'..',
-			],
 			'mac_bundle_resources': [
 				'English.lproj/Credits.rtf',
 				'English.lproj/InfoPlist.strings',
@@ -28,15 +25,11 @@
 				],
 			},
 			'xcode_settings': {
-				'OTHER_CFLAGS': [
-					'-std=c++11',
-				],
 				'INFOPLIST_FILE': 'HelloGyp-Info.plist',
-				'SDKROOT': 'macosx',  # -isysroot
-				'CONFIGURATION_BUILD_DIR': 'build/Default',
-				'CLANG_ENABLE_OBJC_ARC': 'YES',
-			},
-
+				'OTHER_CFLAGS': [
+					'-std=c++11',  # supports C++11
+				],
+			},  # xcode_settings
 		}
 	]
 }

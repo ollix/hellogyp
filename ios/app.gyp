@@ -15,9 +15,6 @@
         'HGRootViewController.mm',
         'main.mm',
       ],
-      'include_dirs': [
-        '..',
-      ],
       'mac_bundle_resources': [
         'English.lproj/InfoPlist.strings',
       ],
@@ -29,11 +26,10 @@
       },
       'xcode_settings': {
         'INFOPLIST_FILE': 'HelloGyp-Info.plist',
-        'SDKROOT': 'iphoneos',  # -isysroot
-        'IPHONEOS_DEPLOYMENT_TARGET': '7.0',
-        'CONFIGURATION_BUILD_DIR': 'build/Default',
-        'CLANG_ENABLE_OBJC_ARC': 'YES',
-      },
+        'OTHER_CFLAGS': [
+        	'-std=c++11',  # supports C++11
+        ],
+      },  # xcode_settings
     }
   ]
 }

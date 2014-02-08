@@ -1,16 +1,31 @@
 {
   'conditions': [
-    ['OS=="ios"', {
-      'xcode_settings': {
-        'SDKROOT': 'iphoneos',
-      },  # xcode_settings
-    }],  # OS=="ios"
     ['OS=="mac" and "<(GENERATOR)"=="ninja"', {
       'make_global_settings': [
         ['CC', '/usr/bin/clang'],
         ['CXX', '/usr/bin/clang++'],
       ],
-    }],  # OS=="mac" and "<(GENERATOR)"=="win"
+    }],  # OS=="mac" and "<(GENERATOR)"=="ninja"
+    ['OS=="mac" or OS=="ios"', {
+      'conditions': [
+        ['OS=="ios"', {
+          'xcode_settings': {
+            'CODE_SIGN_IDENTITY[sdk=iphoneos*]': 'iPhone Developer',
+            'SDKROOT': 'iphoneos',  # -isysroot
+            'TARGETED_DEVICE_FAMILY': '1,2',  # creates universal app
+          },
+        }],  # OS=="ios"
+        ['OS=="mac"', {
+          'xcode_settings': {
+            'SDKROOT': 'macosx',  # -isysroot
+          },
+        }],  # OS=="mac"
+      ],
+      'xcode_settings': {
+        'CLANG_ENABLE_OBJC_ARC': 'YES',  # enables ARC
+        'CONFIGURATION_BUILD_DIR': 'build/Xcode',
+      },  # xcode_settings
+    }],  # OS=="mac" or OS="ios"
   ],  # conditions
   'target_defaults': {
     'default_configuration': 'Debug',
@@ -23,7 +38,11 @@
         'defines': [
           'DEBUG',
         ],
-      },
+        'xcode_settings': {
+          'GCC_OPTIMIZATION_LEVEL': '0',
+          'ONLY_ACTIVE_ARCH': 'YES',
+        },
+      },  # Debug
       'Release': {
         'cflags': [
           '-Os',
@@ -31,17 +50,10 @@
         'defines': [
           'NDEBUG',
         ],
-      }
-    },
-    'conditions': [
-      ['OS=="ios"', {
         'xcode_settings': {
-          'TARGETED_DEVICE_FAMILY': '1,2',
-          'CODE_SIGN_IDENTITY': 'iPhone Developer',
-          'IPHONEOS_DEPLOYMENT_TARGET': '7.0',
-          'ARCHS': '$(ARCHS_STANDARD)',
+          'GCC_OPTIMIZATION_LEVEL': 's',
         },
-      }],  # OS=="ios"
-    ],  # conditions
-  },
+      }  # Release
+    },  # configurations
+  },  # target_defaults
 }

@@ -12,7 +12,9 @@ Hello::Hello() {}
 Hello::~Hello() {}
 
 std::string Hello::GetGreetingMessage() const {
-  return "Hello GYP!";
+  // Uses the `auto` keyword to make sure C++11 is supported.
+  auto greetings = std::string("Hello GYP!");
+  return greetings;
 }
 
 }  // namespace hellogyp
