@@ -19,7 +19,7 @@
         ['CXX', '/usr/bin/clang++'],
       ],
     }],  # OS=="mac" and "<(GENERATOR)"=="ninja"
-    ['OS=="mac" or OS=="ios"', {
+    ['"<(GENERATOR)"=="xcode" and (OS=="mac" or OS=="ios")', {
       'conditions': [
         ['OS=="ios"', {
           'xcode_settings': {
@@ -51,10 +51,14 @@
         'defines': [
           'DEBUG',
         ],
-        'xcode_settings': {
-          'GCC_OPTIMIZATION_LEVEL': '0',
-          'ONLY_ACTIVE_ARCH': 'YES',
-        },
+        'conditions': [
+          ['"<(GENERATOR)"=="xcode"', {
+            'xcode_settings': {
+              'GCC_OPTIMIZATION_LEVEL': '0',
+              'ONLY_ACTIVE_ARCH': 'YES',
+            },
+          }],
+        ],  # "<(GENERATOR)"=="xcode"
       },  # Debug
       'Release': {
         'cflags': [
@@ -63,9 +67,13 @@
         'defines': [
           'NDEBUG',
         ],
-        'xcode_settings': {
-          'GCC_OPTIMIZATION_LEVEL': 's',
-        },
+        'conditions': [
+          ['"<(GENERATOR)"=="xcode"', {
+            'xcode_settings': {
+              'GCC_OPTIMIZATION_LEVEL': 's',
+            },
+          }],
+        ],  # "<(GENERATOR)"=="xcode"
       }  # Release
     },  # configurations
   },  # target_defaults
