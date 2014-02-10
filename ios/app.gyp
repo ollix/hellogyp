@@ -40,7 +40,7 @@
       'xcode_settings': {
         'INFOPLIST_FILE': 'HelloGyp-Info.plist',
         'OTHER_CFLAGS': [
-        	'-std=c++11',  # supports C++11
+          '-std=c++11',  # supports C++11
         ],
       },  # xcode_settings
     }
