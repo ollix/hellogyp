@@ -20,6 +20,6 @@ public class MainActivity extends Activity
     public native String stringFromJNI();
 
     static {
-        System.loadLibrary("hello-jni");
+        System.loadLibrary("_android_jni_hellogyp_jni_gyp");
     }
 }

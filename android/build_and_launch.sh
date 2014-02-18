@@ -1,4 +1,5 @@
-gyp --depth=../ -f android ../hellogyp/hellogyp.gyp
+export ANDROID_BUILD_TOP=`pwd`/../
+gyp --depth=../ -f android jni/jni.gyp
 ndk-build
 ant debug install
 adb shell am start -a android.intent.action.MAIN \
